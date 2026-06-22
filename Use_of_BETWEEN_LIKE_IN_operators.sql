@@ -10,8 +10,6 @@ CREATE TABLE employee3(
 );
 select * from employee3;
 
--- use of Between & LIKE operator
---Q1: Retrieve all the employee first name and last name whose salaery in between 40k to 60k
 SELECT first_name ,  last_name , salary
 FROM employee3
 where salary BETWEEN 40000 AND 60000;
@@ -25,3 +23,13 @@ where email LIKE '%@gmail.com'
 SELECT first_name ,  last_name, department
 FROM employee3
 where department IN ('Finance' , 'Marketing');
+
+--Using ORDER BY Operatoor find out the 5 employee who has maximum salary (Use of ORDER BY , LIMIT Operators)
+SELECT first_name ,  last_name, salary
+FROM employee3
+ORDER BY salary ASC 
+LIMIT 5;
+
+--Return the number of disticnt department in the table (Use of DISTINCT OPERATOR)
+SELECT COUNT (DISTINCT department)
+from employee3;
